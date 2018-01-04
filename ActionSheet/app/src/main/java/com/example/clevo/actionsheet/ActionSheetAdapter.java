@@ -54,10 +54,11 @@ public class ActionSheetAdapter extends BaseAdapter {
             holder= (ViewHolder) convertView.getTag();
         }
         TypedArray array=context.obtainStyledAttributes(null, R.styleable.SheetParams, R.attr.myThemeStyle, 0);
-        array.recycle();
+//        array.recycle();
         holder.pop_desp.setTextColor(array.getColor(R.styleable.SheetParams_textColor, Color.BLACK));
         holder.pop_desp.setTextSize(array.getDimensionPixelSize(R.styleable.SheetParams_textSize, 10));
         holder.pop_desp.setText(title[position]);
+        array.recycle();
         return convertView;
     }
 
